@@ -82,7 +82,7 @@ const WaitlistForm = () => {
           last_name: '',
           goals: {
             debt: false,
-            credit: false,
+            loan: false,
             savings: false,
             automate: false
           }
