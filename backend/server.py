@@ -137,7 +137,7 @@ async def submit_waitlist_form(
             "first_name": form_data.first_name,
             "last_name": form_data.last_name,
             "debt": form_data.debt,
-            "credit": form_data.credit,
+            "loan": form_data.loan,
             "savings": form_data.savings,
             "automate": form_data.automate,
         }
