@@ -136,10 +136,10 @@ async def submit_waitlist_form(
             "email": form_data.email,
             "first_name": form_data.first_name,
             "last_name": form_data.last_name,
-            "debt": form_data.debt,
-            "loan": form_data.loan,
-            "savings": form_data.savings,
-            "automate": form_data.automate,
+            "refinance": form_data.refinance,
+            "new_loan": form_data.new_loan,
+            "hysa": form_data.hysa,
+            "automation": form_data.automation,
         }
 
         # Insert into Supabase
