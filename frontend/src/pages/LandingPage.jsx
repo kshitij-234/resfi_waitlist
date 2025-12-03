@@ -32,8 +32,8 @@ const LandingPage = () => {
         </button>
       </nav>
 
-      {/* Unified Gradient Section - Hero, Outcomes, and Form */}
-      <section className="hero-section" style={{ minHeight: 'auto', padding: '6rem 1.5rem 5rem' }}>
+      {/* Hero Section with Gradient */}
+      <section className="hero-section" style={{ minHeight: 'auto', padding: '6rem 1.5rem 3rem' }}>
         {/* Hero Content */}
         <div className="hero-content fade-in-up" style={{ marginBottom: '3rem' }}>
           <h1 className="heading-1" style={{ marginBottom: '1rem' }}>
@@ -44,17 +44,26 @@ const LandingPage = () => {
           </p>
         </div>
         
-        {/* Outcomes Grid */}
-        <div className="container" style={{ marginBottom: '4rem' }}>
+        {/* Outcomes Grid below hero */}
+        <div className="container">
           <div className="outcomes-grid">
             {guaranteedOutcomes.map(outcome => (
               <OutcomeCard key={outcome.id} outcome={outcome} />
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Waitlist Form within same gradient */}
-        <div className="container" id="waitlist-form">
+      {/* Waitlist Form Section with same gradient */}
+      <section 
+        id="waitlist-form"
+        style={{ 
+          background: 'var(--gradient-hero)',
+          padding: '3rem 1.5rem 5rem',
+          position: 'relative'
+        }}
+      >
+        <div className="container">
           <div className="product-card" style={{ 
             maxWidth: '650px', 
             margin: '0 auto',
