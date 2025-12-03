@@ -32,8 +32,8 @@ const LandingPage = () => {
         </button>
       </nav>
 
-      {/* Hero Section */}
-      <section className="hero-section" style={{ minHeight: 'auto', padding: '6rem 1.5rem 2rem' }}>
+      {/* Hero Section with Outcomes - Unified Gradient */}
+      <section className="hero-section" style={{ minHeight: 'auto', padding: '6rem 1.5rem 3rem' }}>
         <div className="hero-content fade-in-up">
           <h1 className="heading-1" style={{ marginBottom: '1rem', textTransform: 'capitalize' }}>
             AI-Native, Automated Banking
@@ -42,15 +42,9 @@ const LandingPage = () => {
             Make your money work for you every day. Set it once, and let our AI handle everything.
           </p>
         </div>
-      </section>
-
-      {/* Outcomes Section */}
-      <section style={{ 
-        background: 'var(--bg-page)', 
-        padding: '2rem 1.5rem 3rem',
-        position: 'relative'
-      }}>
-        <div className="container">
+        
+        {/* Outcomes Grid within same gradient section */}
+        <div className="container" style={{ marginTop: '2rem' }}>
           <div className="outcomes-grid">
             {guaranteedOutcomes.map(outcome => (
               <OutcomeCard key={outcome.id} outcome={outcome} />
