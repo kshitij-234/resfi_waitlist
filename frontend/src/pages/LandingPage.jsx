@@ -26,20 +26,19 @@ const LandingPage = () => {
         </div>
         <button 
           onClick={scrollToForm}
-          className="btn-primary"
-          style={{ minHeight: '40px', padding: '10px 24px', fontSize: '0.95rem' }}
+          className="btn-primary nav-cta-button"
         >
           Join Waitlist
         </button>
       </nav>
 
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section" style={{ minHeight: 'auto', padding: '6rem 1.5rem 2rem' }}>
         <div className="hero-content fade-in-up">
-          <h1 className="heading-1" style={{ marginBottom: '1.5rem' }}>
-            AI-native, automated banking
+          <h1 className="heading-1" style={{ marginBottom: '1rem', textTransform: 'capitalize' }}>
+            AI-Native, Automated Banking
           </h1>
-          <p className="body-large" style={{ marginBottom: '3rem', color: 'var(--text-secondary)' }}>
+          <p className="body-large" style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>
             Make your money work for you every day. Set it once, and let our AI handle everything.
           </p>
         </div>
@@ -48,12 +47,12 @@ const LandingPage = () => {
       {/* Guaranteed Outcomes Section */}
       <section style={{ 
         background: 'var(--bg-page)', 
-        padding: '5rem 1.5rem',
+        padding: '3rem 1.5rem',
         position: 'relative'
       }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="heading-2" style={{ marginBottom: '1rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <h2 className="heading-2" style={{ marginBottom: '0.75rem' }}>
               Guaranteed Outcomes
             </h2>
             <p className="body-large" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
