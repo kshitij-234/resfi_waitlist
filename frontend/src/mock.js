@@ -41,13 +41,13 @@ export const guaranteedOutcomes = [
   {
     id: 1,
     title: 'Get out of debt faster while paying less',
-    description: 'Our AI automatically finds the best debt payoff strategy, negotiates lower rates, and optimizes your payments to save you thousands.',
+    description: 'Our AI automatically optimizes your cash to pay thousands less in interest and pay it off faster.',
     icon: 'TrendingDown'
   },
   {
     id: 2,
-    title: 'Automated savings and investments',
-    description: 'Smart algorithms analyze your spending patterns and automatically transfer money to high-yield savings and diversified investments.',
+    title: 'Automated savings',
+    description: 'Smart algorithms analyze your spending patterns and automatically transfer money to high-yield savings.',
     icon: 'PiggyBank'
   },
   {
