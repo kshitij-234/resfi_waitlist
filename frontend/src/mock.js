@@ -59,8 +59,8 @@ export const guaranteedOutcomes = [
 ];
 
 export const userGoalOptions = [
-  { id: 'debt', label: 'Pay off your debt faster' },
-  { id: 'credit', label: 'Get a new loan/credit' },
-  { id: 'savings', label: 'Earn more interest on your savings' },
+  { id: 'debt', label: 'Pay off my debt faster' },
+  { id: 'loan', label: 'Get a new loan' },
+  { id: 'savings', label: 'Earn more interest on my savings' },
   { id: 'automate', label: 'Automate my money' }
 ];
