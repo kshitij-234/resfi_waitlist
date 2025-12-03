@@ -1,0 +1,99 @@
+import React from 'react';
+import { guaranteedOutcomes } from '../mock';
+import WaitlistForm from '../components/WaitlistForm';
+import OutcomeCard from '../components/OutcomeCard';
+import '../styles/resfi.css';
+
+const LandingPage = () => {
+  return (
+    <div className="landing-page">
+      {/* Navigation Header */}
+      <nav className="nav-header">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ 
+            background: 'var(--gradient-button)', 
+            width: '32px', 
+            height: '32px', 
+            borderRadius: '8px' 
+          }} />
+          <span style={{ fontWeight: 600, fontSize: '1.25rem', color: 'var(--text-primary)' }}>
+            ResFi.ai
+          </span>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content fade-in-up">
+          <h1 className="heading-1" style={{ marginBottom: '1.5rem' }}>
+            AI-native, automated banking
+          </h1>
+          <p className="body-large" style={{ marginBottom: '3rem', color: 'var(--text-secondary)' }}>
+            Make your money work for you every day. Set it once, and let our AI handle everything.
+          </p>
+          
+          {/* Waitlist Form Card */}
+          <div className="product-card" style={{ 
+            maxWidth: '650px', 
+            margin: '0 auto',
+            padding: '2.5rem',
+            textAlign: 'left'
+          }}>
+            <h2 className="heading-3" style={{ marginBottom: '0.5rem', textAlign: 'center' }}>
+              Join the Waitlist
+            </h2>
+            <p className="body-small" style={{ marginBottom: '2rem', textAlign: 'center' }}>
+              Be among the first to experience AI-powered financial freedom
+            </p>
+            <WaitlistForm />
+          </div>
+        </div>
+      </section>
+
+      {/* Guaranteed Outcomes Section */}
+      <section style={{ 
+        background: 'var(--bg-page)', 
+        padding: '5rem 1.5rem',
+        position: 'relative'
+      }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className="heading-2" style={{ marginBottom: '1rem' }}>
+              Guaranteed Outcomes
+            </h2>
+            <p className="body-large" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
+              Our AI-powered platform delivers real, measurable results
+            </p>
+          </div>
+          
+          <div className="outcomes-grid">
+            {guaranteedOutcomes.map(outcome => (
+              <OutcomeCard key={outcome.id} outcome={outcome} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{
+        background: 'var(--bg-section)',
+        padding: '3rem 1.5rem',
+        textAlign: 'center',
+        borderTop: '1px solid var(--border-light)'
+      }}>
+        <div className="container">
+          <div style={{ marginBottom: '1rem' }}>
+            <span style={{ fontWeight: 600, fontSize: '1.25rem', color: 'var(--text-primary)' }}>
+              ResFi.ai
+            </span>
+          </div>
+          <p className="body-small" style={{ color: 'var(--text-muted)' }}>
+            © 2025 ResFi.ai. AI-native automated banking.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default LandingPage;
