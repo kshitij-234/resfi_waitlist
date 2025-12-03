@@ -44,22 +44,13 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Guaranteed Outcomes Section */}
+      {/* Outcomes Section */}
       <section style={{ 
         background: 'var(--bg-page)', 
-        padding: '3rem 1.5rem',
+        padding: '2rem 1.5rem 3rem',
         position: 'relative'
       }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <h2 className="heading-2" style={{ marginBottom: '0.75rem' }}>
-              Guaranteed Outcomes
-            </h2>
-            <p className="body-large" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-              Our AI-powered platform delivers real, measurable results
-            </p>
-          </div>
-          
           <div className="outcomes-grid">
             {guaranteedOutcomes.map(outcome => (
               <OutcomeCard key={outcome.id} outcome={outcome} />
