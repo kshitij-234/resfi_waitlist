@@ -64,10 +64,10 @@ const WaitlistForm = () => {
         email: formData.email.toLowerCase(),
         first_name: formData.first_name,
         last_name: formData.last_name,
-        debt: formData.goals.debt,
-        loan: formData.goals.loan,
-        savings: formData.goals.savings,
-        automate: formData.goals.automate
+        refinance: formData.goals.refinance,
+        new_loan: formData.goals.new_loan,
+        hysa: formData.goals.hysa,
+        automation: formData.goals.automation
       });
       
       setIsSubmitted(true);
