@@ -114,6 +114,98 @@ async def get_status_checks():
     
     return status_checks
 
+# Waitlist Endpoints
+@api_router.post(
+    "/waitlist",
+    response_model=WaitlistSubmissionResponse,
+    status_code=status.HTTP_201_CREATED,
+    tags=["Waitlist"]
+)
+async def submit_waitlist_form(
+    form_data: WaitlistFormRequest
+) -> WaitlistSubmissionResponse:
+    """
+    Submit a new entry to the waitlist.
+    
+    This endpoint accepts user information including email, name, and 
+    goal selections, then stores the data in Supabase.
+    """
+    try:
+        # Prepare data for insertion
+        insert_data = {
+            "email": form_data.email,
+            "first_name": form_data.first_name,
+            "last_name": form_data.last_name,
+            "debt": form_data.debt,
+            "credit": form_data.credit,
+            "savings": form_data.savings,
+            "automate": form_data.automate,
+        }
+
+        # Insert into Supabase
+        response = supabase.table("waitlist").insert(insert_data).execute()
+
+        # Extract the inserted record from response
+        if response.data:
+            inserted_record = response.data[0]
+            entry_response = WaitlistEntryResponse(**inserted_record)
+            
+            logger.info(f"Successfully added {form_data.email} to waitlist")
+            
+            return WaitlistSubmissionResponse(
+                success=True,
+                message="Thank you for joining our waitlist!",
+                data=entry_response
+            )
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to create waitlist entry"
+            )
+
+    except Exception as e:
+        logger.error(f"Error submitting waitlist form: {str(e)}")
+        
+        # Check for unique constraint violation (duplicate email)
+        if "duplicate" in str(e).lower() or "unique" in str(e).lower():
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail="This email address is already on the waitlist"
+            )
+        
+        # Generic error handling for other database errors
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="An error occurred while processing your request. Please try again later."
+        )
+
+@api_router.get(
+    "/waitlist",
+    response_model=List[WaitlistEntryResponse],
+    tags=["Waitlist"]
+)
+async def get_all_waitlist_entries() -> List[WaitlistEntryResponse]:
+    """
+    Retrieve all waitlist entries (admin endpoint).
+    
+    Note: In production, this should require authentication.
+    """
+    try:
+        response = supabase.table("waitlist").select("*").execute()
+        
+        if response.data:
+            entries = [WaitlistEntryResponse(**record) for record in response.data]
+            return entries
+        else:
+            return []
+
+    except Exception as e:
+        logger.error(f"Error retrieving waitlist data: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve waitlist data"
+        )
+
 # Include the router in the main app
 app.include_router(api_router)
 
