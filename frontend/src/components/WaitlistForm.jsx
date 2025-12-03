@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { mockWaitlistData, userGoalOptions } from '../mock';
+import { userGoalOptions } from '../mock';
 import { Checkbox } from './ui/checkbox';
 import { Label } from './ui/label';
 import { toast } from 'sonner';
 import { CheckCircle2, Loader2 } from 'lucide-react';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const WaitlistForm = () => {
   const [formData, setFormData] = useState({
