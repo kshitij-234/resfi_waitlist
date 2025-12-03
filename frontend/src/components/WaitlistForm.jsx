@@ -65,7 +65,7 @@ const WaitlistForm = () => {
         first_name: formData.first_name,
         last_name: formData.last_name,
         debt: formData.goals.debt,
-        credit: formData.goals.credit,
+        loan: formData.goals.loan,
         savings: formData.goals.savings,
         automate: formData.goals.automate
       });
