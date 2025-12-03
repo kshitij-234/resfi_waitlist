@@ -5,6 +5,10 @@ import OutcomeCard from '../components/OutcomeCard';
 import '../styles/resfi.css';
 
 const LandingPage = () => {
+  const scrollToForm = () => {
+    document.getElementById('waitlist-form').scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="landing-page">
       {/* Navigation Header */}
@@ -20,6 +24,13 @@ const LandingPage = () => {
             ResFi.ai
           </span>
         </div>
+        <button 
+          onClick={scrollToForm}
+          className="btn-primary"
+          style={{ minHeight: '40px', padding: '10px 24px', fontSize: '0.95rem' }}
+        >
+          Join Waitlist
+        </button>
       </nav>
 
       {/* Hero Section */}
@@ -31,22 +42,6 @@ const LandingPage = () => {
           <p className="body-large" style={{ marginBottom: '3rem', color: 'var(--text-secondary)' }}>
             Make your money work for you every day. Set it once, and let our AI handle everything.
           </p>
-          
-          {/* Waitlist Form Card */}
-          <div className="product-card" style={{ 
-            maxWidth: '650px', 
-            margin: '0 auto',
-            padding: '2.5rem',
-            textAlign: 'left'
-          }}>
-            <h2 className="heading-3" style={{ marginBottom: '0.5rem', textAlign: 'center' }}>
-              Join the Waitlist
-            </h2>
-            <p className="body-small" style={{ marginBottom: '2rem', textAlign: 'center' }}>
-              Be among the first to experience AI-powered financial freedom
-            </p>
-            <WaitlistForm />
-          </div>
         </div>
       </section>
 
@@ -74,9 +69,36 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Waitlist Form Section */}
+      <section 
+        id="waitlist-form"
+        style={{ 
+          background: 'var(--bg-section)', 
+          padding: '5rem 1.5rem',
+          position: 'relative'
+        }}
+      >
+        <div className="container">
+          <div className="product-card" style={{ 
+            maxWidth: '650px', 
+            margin: '0 auto',
+            padding: '2.5rem',
+            textAlign: 'left'
+          }}>
+            <h2 className="heading-3" style={{ marginBottom: '0.5rem', textAlign: 'center' }}>
+              Join the Waitlist
+            </h2>
+            <p className="body-small" style={{ marginBottom: '2rem', textAlign: 'center' }}>
+              Be among the first to experience AI-powered financial freedom
+            </p>
+            <WaitlistForm />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer style={{
-        background: 'var(--bg-section)',
+        background: 'var(--bg-page)',
         padding: '3rem 1.5rem',
         textAlign: 'center',
         borderTop: '1px solid var(--border-light)'
@@ -87,8 +109,11 @@ const LandingPage = () => {
               ResFi.ai
             </span>
           </div>
-          <p className="body-small" style={{ color: 'var(--text-muted)' }}>
+          <p className="body-small" style={{ color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
             © 2025 ResFi.ai. AI-native automated banking.
+          </p>
+          <p className="body-small" style={{ color: 'var(--text-muted)' }}>
+            Contact us: <a href="mailto:asheet@resfi.ai" style={{ color: 'var(--accent-text)', textDecoration: 'none' }}>asheet@resfi.ai</a>
           </p>
         </div>
       </footer>
