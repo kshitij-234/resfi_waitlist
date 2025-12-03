@@ -60,15 +60,18 @@ const WaitlistForm = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await mockWaitlistData.submitToWaitlist({
+      const response = await axios.post(`${BACKEND_URL}/api/waitlist`, {
         email: formData.email.toLowerCase(),
         first_name: formData.first_name,
         last_name: formData.last_name,
-        ...formData.goals
+        debt: formData.goals.debt,
+        credit: formData.goals.credit,
+        savings: formData.goals.savings,
+        automate: formData.goals.automate
       });
       
       setIsSubmitted(true);
-      toast.success(response.message);
+      toast.success(response.data.message);
       
       // Reset form after 3 seconds
       setTimeout(() => {
@@ -87,7 +90,8 @@ const WaitlistForm = () => {
       }, 3000);
       
     } catch (error) {
-      toast.error(error.message || 'Failed to join waitlist. Please try again.');
+      const errorMessage = error.response?.data?.detail || error.message || 'Failed to join waitlist. Please try again.';
+      toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
