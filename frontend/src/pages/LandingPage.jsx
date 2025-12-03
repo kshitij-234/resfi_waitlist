@@ -33,19 +33,24 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero Section with Gradient */}
-      <section className="hero-section" style={{ minHeight: 'auto', padding: '6rem 1.5rem 3rem' }}>
-        {/* Hero Content */}
-        <div className="hero-content fade-in-up" style={{ marginBottom: '3rem' }}>
-          <h1 className="heading-1" style={{ marginBottom: '1rem' }}>
-            AI-Native<br />Automated Banking
-          </h1>
-          <p className="body-large" style={{ marginBottom: '0', color: 'var(--text-secondary)' }}>
-            Make your money work for you every day. Set it once, and let our AI handle everything.
-          </p>
-        </div>
-        
-        {/* Outcomes Grid below hero */}
+      <section style={{ 
+        background: 'var(--gradient-hero)',
+        minHeight: 'auto', 
+        padding: '6rem 1.5rem 3rem',
+        position: 'relative'
+      }}>
         <div className="container">
+          {/* Hero Content */}
+          <div className="hero-content fade-in-up" style={{ marginBottom: '3rem', textAlign: 'center' }}>
+            <h1 className="heading-1" style={{ marginBottom: '1rem' }}>
+              AI-Native<br />Automated Banking
+            </h1>
+            <p className="body-large" style={{ marginBottom: '0', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
+              Make your money work for you every day. Set it once, and let our AI handle everything.
+            </p>
+          </div>
+          
+          {/* Outcomes Grid below hero */}
           <div className="outcomes-grid">
             {guaranteedOutcomes.map(outcome => (
               <OutcomeCard key={outcome.id} outcome={outcome} />
