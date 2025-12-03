@@ -14,10 +14,10 @@ const WaitlistForm = () => {
     first_name: '',
     last_name: '',
     goals: {
-      debt: false,
-      loan: false,
-      savings: false,
-      automate: false
+      refinance: false,
+      new_loan: false,
+      hysa: false,
+      automation: false
     }
   });
   
