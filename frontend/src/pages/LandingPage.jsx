@@ -32,37 +32,29 @@ const LandingPage = () => {
         </button>
       </nav>
 
-      {/* Hero Section with Outcomes - Unified Gradient */}
-      <section className="hero-section" style={{ minHeight: 'auto', padding: '6rem 1.5rem 3rem' }}>
-        <div className="hero-content fade-in-up">
-          <h1 className="heading-1" style={{ marginBottom: '1rem', textTransform: 'capitalize' }}>
-            AI-Native, Automated Banking
+      {/* Unified Gradient Section - Hero, Outcomes, and Form */}
+      <section className="hero-section" style={{ minHeight: 'auto', padding: '6rem 1.5rem 5rem' }}>
+        {/* Hero Content */}
+        <div className="hero-content fade-in-up" style={{ marginBottom: '3rem' }}>
+          <h1 className="heading-1" style={{ marginBottom: '1rem' }}>
+            AI-Native<br />Automated Banking
           </h1>
-          <p className="body-large" style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>
+          <p className="body-large" style={{ marginBottom: '0', color: 'var(--text-secondary)' }}>
             Make your money work for you every day. Set it once, and let our AI handle everything.
           </p>
         </div>
         
-        {/* Outcomes Grid within same gradient section */}
-        <div className="container" style={{ marginTop: '2rem' }}>
+        {/* Outcomes Grid */}
+        <div className="container" style={{ marginBottom: '4rem' }}>
           <div className="outcomes-grid">
             {guaranteedOutcomes.map(outcome => (
               <OutcomeCard key={outcome.id} outcome={outcome} />
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Waitlist Form Section */}
-      <section 
-        id="waitlist-form"
-        style={{ 
-          background: 'var(--bg-section)', 
-          padding: '5rem 1.5rem',
-          position: 'relative'
-        }}
-      >
-        <div className="container">
+        {/* Waitlist Form within same gradient */}
+        <div className="container" id="waitlist-form">
           <div className="product-card" style={{ 
             maxWidth: '650px', 
             margin: '0 auto',
