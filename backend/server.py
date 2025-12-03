@@ -184,14 +184,17 @@ async def submit_waitlist_form(
     response_model=List[WaitlistEntryResponse],
     tags=["Waitlist"]
 )
-async def get_all_waitlist_entries() -> List[WaitlistEntryResponse]:
+async def get_all_waitlist_entries(
+    limit: int = 100,
+    offset: int = 0
+) -> List[WaitlistEntryResponse]:
     """
-    Retrieve all waitlist entries (admin endpoint).
+    Retrieve waitlist entries (admin endpoint) with pagination.
     
     Note: In production, this should require authentication.
     """
     try:
-        response = supabase.table("waitlist").select("*").execute()
+        response = supabase.table("waitlist").select("*").range(offset, offset + limit - 1).execute()
         
         if response.data:
             entries = [WaitlistEntryResponse(**record) for record in response.data]
