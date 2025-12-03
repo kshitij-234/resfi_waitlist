@@ -53,10 +53,10 @@ class WaitlistFormRequest(BaseModel):
     email: EmailStr
     first_name: str = Field(..., min_length=1, max_length=100)
     last_name: str = Field(..., min_length=1, max_length=100)
-    debt: bool = Field(default=False)
-    loan: bool = Field(default=False)
-    savings: bool = Field(default=False)
-    automate: bool = Field(default=False)
+    refinance: bool = Field(default=False)
+    new_loan: bool = Field(default=False)
+    hysa: bool = Field(default=False)
+    automation: bool = Field(default=False)
 
     @field_validator('email')
     @classmethod
@@ -69,10 +69,10 @@ class WaitlistEntryResponse(BaseModel):
     email: str
     first_name: str
     last_name: str
-    debt: bool
-    loan: bool
-    savings: bool
-    automate: bool
+    refinance: bool
+    new_loan: bool
+    hysa: bool
+    automation: bool
     created_at: datetime
     updated_at: datetime
 
