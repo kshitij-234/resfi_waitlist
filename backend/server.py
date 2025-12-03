@@ -47,6 +47,44 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# Waitlist Models
+class WaitlistFormRequest(BaseModel):
+    """Request model for waitlist form submissions."""
+    email: EmailStr
+    first_name: str = Field(..., min_length=1, max_length=100)
+    last_name: str = Field(..., min_length=1, max_length=100)
+    debt: bool = Field(default=False)
+    credit: bool = Field(default=False)
+    savings: bool = Field(default=False)
+    automate: bool = Field(default=False)
+
+    @field_validator('email')
+    @classmethod
+    def email_to_lowercase(cls, v: str) -> str:
+        return v.lower()
+
+class WaitlistEntryResponse(BaseModel):
+    """Response model for waitlist entries."""
+    id: int
+    email: str
+    first_name: str
+    last_name: str
+    debt: bool
+    credit: bool
+    savings: bool
+    automate: bool
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
+
+class WaitlistSubmissionResponse(BaseModel):
+    """Response model for form submission success."""
+    success: bool = True
+    message: str = "Thank you for joining our waitlist!"
+    data: WaitlistEntryResponse
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
