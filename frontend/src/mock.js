@@ -62,5 +62,5 @@ export const userGoalOptions = [
   { id: 'refinance', label: 'Pay off my debt faster' },
   { id: 'new_loan', label: 'Get a new loan' },
   { id: 'hysa', label: 'Earn more interest on my savings' },
-  { id: 'automation', label: 'Automate my money' }
+  { id: 'automation', label: 'Automate my money management' }
 ];
