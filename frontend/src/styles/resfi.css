@@ -381,6 +381,14 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}
+
 /* Animations - Smooth & Futuristic */
 @keyframes fadeInUp {
   from {
