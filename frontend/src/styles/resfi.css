@@ -55,6 +55,7 @@ body {
   background: var(--bg-page);
   color: var(--text-body);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Typography */
