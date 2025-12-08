@@ -96,11 +96,11 @@ const LandingPage = () => {
         <div className="container">
           <div style={{ marginBottom: '1rem' }}>
             <span style={{ fontWeight: 600, fontSize: '1.25rem', color: 'var(--text-primary)' }}>
-              ResFi.ai
+              QARO
             </span>
           </div>
           <p className="body-small" style={{ color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-            © 2025 ResFi.ai. AI-native automated banking.
+            © 2025 QARO. AI-native automated banking.
           </p>
           <p className="body-small" style={{ color: 'var(--text-muted)' }}>
             Contact us: <a href="mailto:asheet@resfi.ai" style={{ color: 'var(--accent-text)', textDecoration: 'none' }}>asheet@resfi.ai</a>
