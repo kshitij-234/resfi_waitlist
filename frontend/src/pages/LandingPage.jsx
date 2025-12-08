@@ -21,7 +21,7 @@ const LandingPage = () => {
             borderRadius: '8px' 
           }} />
           <span style={{ fontWeight: 600, fontSize: '1.25rem', color: 'var(--text-primary)' }}>
-            ResFi.ai
+            QARO
           </span>
         </div>
         <button 
