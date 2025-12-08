@@ -40,14 +40,14 @@ export const mockWaitlistData = {
 export const guaranteedOutcomes = [
   {
     id: 1,
-    title: 'Get out of debt faster while paying less',
-    description: 'Our AI automatically optimizes your cash to pay thousands less in interest and pay it off faster.',
+    title: 'Get out of debt and pay less',
+    description: 'We automatically optimize your excess cash to help you save hundreds or even thousands in interest and get out of debt faster.',
     icon: 'TrendingDown'
   },
   {
     id: 2,
-    title: 'Automated savings',
-    description: 'Smart algorithms analyze your spending patterns and automatically transfer money to high-yield savings.',
+    title: 'Advanced Spend Management',
+    description: 'We automatically identify and eliminate wasteful spending such as monthly subscription.',
     icon: 'PiggyBank'
   },
   {
