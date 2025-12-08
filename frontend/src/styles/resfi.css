@@ -1,35 +1,44 @@
-/* ResFi.ai Landing Page Styles - Zen Blue Design System */
+/* QARO Landing Page Styles - Liquid Glass Futuristic Design */
 
 :root {
-  /* Backgrounds - Clean & Minimal */
-  --bg-page: #FFFFFF;
-  --bg-card: #FFFFFF;
-  --bg-section: rgba(0, 0, 0, 0.02);
+  /* Backgrounds - Futuristic Glass */
+  --bg-page: #0A0E1A;
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-glass-strong: rgba(255, 255, 255, 0.1);
   
-  /* Text - Professional Hierarchy */
-  --text-primary: rgb(10, 37, 64);
-  --text-body: rgb(14, 15, 12);
-  --text-secondary: rgb(100, 116, 139);
-  --text-muted: rgb(148, 163, 184);
+  /* Text - High Contrast Hierarchy */
+  --text-primary: #FFFFFF;
+  --text-body: rgba(255, 255, 255, 0.9);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
   
-  /* Borders - Subtle Separation */
-  --border-light: rgba(0, 0, 0, 0.1);
-  --border-medium: rgba(0, 0, 0, 0.2);
-  --border-strong: rgba(0, 0, 0, 0.3);
+  /* Glass Borders */
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --border-glass-strong: rgba(255, 255, 255, 0.2);
+  --border-glow: rgba(96, 165, 250, 0.3);
   
-  /* BRAND COLORS - Zen Blue Accent System */
+  /* BRAND COLORS - Futuristic Blue */
   --accent-primary: #60A5FA;
   --accent-strong: #3B82F6;
-  --accent-text: rgb(29, 78, 216);
-  --accent-wash: rgba(96, 165, 250, 0.1);
+  --accent-glow: rgba(96, 165, 250, 0.5);
+  --accent-text: #60A5FA;
+  --accent-wash: rgba(96, 165, 250, 0.15);
   
-  /* Hero Gradients */
-  --gradient-hero: radial-gradient(at 53% 78%, hsla(200,100%,85%,0.3) 0px, transparent 50%), 
-                   radial-gradient(at 71% 91%, hsla(210,100%,80%,0.3) 0px, transparent 50%), 
-                   radial-gradient(at 31% 91%, hsla(220,100%,75%,0.17) 0px, transparent 50%);
+  /* Futuristic Gradients */
+  --gradient-hero: 
+    radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(147, 197, 253, 0.1) 0%, transparent 70%),
+    linear-gradient(180deg, #0A0E1A 0%, #111827 100%);
   
-  /* Button Gradients */
-  --gradient-button: linear-gradient(to bottom right, var(--accent-primary), var(--accent-strong));
+  /* Button Gradients with Glow */
+  --gradient-button: linear-gradient(135deg, var(--accent-primary), var(--accent-strong));
+  
+  /* Glass Shadow System */
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-glass-hover: 0 8px 32px 0 rgba(96, 165, 250, 0.2);
+  --glow-subtle: 0 0 20px rgba(96, 165, 250, 0.1);
+  --glow-strong: 0 0 40px rgba(96, 165, 250, 0.3);
 }
 
 /* Reset and Base Styles */
