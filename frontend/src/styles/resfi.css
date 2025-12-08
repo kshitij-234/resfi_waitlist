@@ -362,6 +362,18 @@ body {
   padding: 1.5rem;
 }
 
+/* Outcome Cards - Equal Heights */
+.outcome-card {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .outcome-card {
+    min-height: 380px;
+  }
+}
+
 /* Animations - Smooth & Futuristic */
 @keyframes fadeInUp {
   from {
