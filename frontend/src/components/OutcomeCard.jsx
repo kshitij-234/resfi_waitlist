@@ -43,10 +43,10 @@ const OutcomeCard = ({ outcome }) => {
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
         border: '1px solid var(--border-glow)',
-        width: '64px', 
-        height: '64px', 
-        borderRadius: '16px',
-        display: 'flex',
+        width: isMobile ? '48px' : '64px', 
+        height: isMobile ? '48px' : '64px', 
+        borderRadius: isMobile ? '12px' : '16px',
+        display: isMobile ? 'none' : 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: '1.5rem',
@@ -57,12 +57,16 @@ const OutcomeCard = ({ outcome }) => {
       </div>
       
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <h3 className="heading-3" style={{ marginBottom: isMobile ? '0' : '1rem', flex: 1 }}>
+        <h3 className="heading-3" style={{ 
+          marginBottom: isMobile ? '0' : '1rem', 
+          flex: 1,
+          fontSize: isMobile ? '1.1rem' : undefined
+        }}>
           {outcome.title}
         </h3>
         {isMobile && (
           <ChevronDown 
-            size={24} 
+            size={20} 
             color="var(--accent-text)" 
             style={{ 
               transition: 'transform 0.3s ease',
@@ -78,9 +82,13 @@ const OutcomeCard = ({ outcome }) => {
         maxHeight: isMobile ? (isExpanded ? '500px' : '0') : 'none',
         overflow: 'hidden',
         transition: 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        marginTop: isMobile ? (isExpanded ? '1rem' : '0') : '0'
+        marginTop: isMobile ? (isExpanded ? '0.75rem' : '0') : '0'
       }}>
-        <p className="body-medium" style={{ color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+        <p className="body-medium" style={{ 
+          color: 'var(--text-secondary)', 
+          lineHeight: '1.7',
+          fontSize: isMobile ? '0.9rem' : undefined
+        }}>
           {outcome.description}
         </p>
       </div>
