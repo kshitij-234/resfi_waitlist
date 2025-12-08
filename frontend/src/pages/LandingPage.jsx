@@ -37,23 +37,61 @@ const LandingPage = () => {
         background: 'var(--gradient-hero)',
         minHeight: 'auto', 
         padding: '6rem 1.5rem 3rem',
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <div className="container">
+        {/* Animated background elements */}
+        <div style={{
+          position: 'absolute',
+          top: '-50%',
+          right: '-10%',
+          width: '500px',
+          height: '500px',
+          background: 'radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(60px)',
+          animation: 'float 6s ease-in-out infinite',
+          pointerEvents: 'none'
+        }} />
+        <div style={{
+          position: 'absolute',
+          bottom: '-30%',
+          left: '-5%',
+          width: '400px',
+          height: '400px',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(50px)',
+          animation: 'float 8s ease-in-out infinite reverse',
+          pointerEvents: 'none'
+        }} />
+        
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           {/* Hero Content */}
-          <div className="hero-content fade-in-up" style={{ marginBottom: '3rem', textAlign: 'center' }}>
-            <h1 className="heading-1" style={{ marginBottom: '1rem' }}>
+          <div className="hero-content fade-in-up" style={{ marginBottom: '4rem', textAlign: 'center' }}>
+            <h1 className="heading-1" style={{ 
+              marginBottom: '1.5rem',
+              textShadow: '0 0 40px rgba(96, 165, 250, 0.3)'
+            }}>
               AI-Native<br />Automated Banking
             </h1>
-            <p className="body-large" style={{ marginBottom: '0', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
+            <p className="body-large" style={{ 
+              marginBottom: '0', 
+              color: 'var(--text-secondary)', 
+              maxWidth: '800px', 
+              margin: '0 auto',
+              textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)'
+            }}>
               Make your money work for you every day. Set it once, and let our AI handle everything.
             </p>
           </div>
           
           {/* Outcomes Grid below hero */}
           <div className="outcomes-grid">
-            {guaranteedOutcomes.map(outcome => (
-              <OutcomeCard key={outcome.id} outcome={outcome} />
+            {guaranteedOutcomes.map((outcome, index) => (
+              <div key={outcome.id} style={{ animationDelay: `${index * 0.1}s` }}>
+                <OutcomeCard outcome={outcome} />
+              </div>
             ))}
           </div>
         </div>
