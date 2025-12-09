@@ -377,7 +377,12 @@ body {
 
 @media (min-width: 768px) {
   .outcome-card {
-    min-height: 280px;
+    min-height: auto;
+    height: 100%;
+  }
+  
+  .outcomes-grid {
+    align-items: stretch;
   }
 }
 
