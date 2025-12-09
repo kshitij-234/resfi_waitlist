@@ -35,7 +35,10 @@ const OutcomeCard = ({ outcome }) => {
       onClick={toggleExpand}
       style={{ 
         cursor: isMobile ? 'pointer' : 'default',
-        minHeight: isMobile ? 'auto' : '380px'
+        minHeight: isMobile ? 'auto' : 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%'
       }}
     >
       <div style={{ 
