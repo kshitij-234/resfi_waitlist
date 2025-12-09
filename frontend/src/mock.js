@@ -53,7 +53,7 @@ export const guaranteedOutcomes = [
   {
     id: 3,
     title: 'Reduce Financial Stress',
-    description: 'Set your goals once and let AI handle everything - bill payments, savings, investments, and debt payoff, all on autopilot.',
+    description: 'Set your goals once and let AI handle everything on autopilot.',
     icon: 'Shield'
   }
 ];
