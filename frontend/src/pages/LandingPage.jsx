@@ -82,7 +82,7 @@ const LandingPage = () => {
               margin: '0 auto',
               textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)'
             }}>
-              Make your money work for you every day. Set it once, and let our AI handle everything.
+              Make your money work for you every day. Let us help you get out of debt and set out on a path to savings.
             </p>
           </div>
           
