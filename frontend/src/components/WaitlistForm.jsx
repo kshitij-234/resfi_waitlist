@@ -140,13 +140,13 @@ const WaitlistForm = () => {
           </Label>
           <input
             id="email"
-            type="email"
+            type="text"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
             className="form-input"
             placeholder="you@example.com"
-            required
+            autoComplete="email"
           />
         </div>
         
