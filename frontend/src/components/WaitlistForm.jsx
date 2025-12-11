@@ -42,12 +42,24 @@ const WaitlistForm = () => {
     }));
   };
 
+  const validateEmail = (email) => {
+    // Simple but comprehensive email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Validation
     if (!formData.email || !formData.first_name || !formData.last_name) {
       toast.error('Please fill in all required fields');
+      return;
+    }
+    
+    // Email validation
+    if (!validateEmail(formData.email)) {
+      toast.error('Invalid email');
       return;
     }
     
@@ -90,7 +102,15 @@ const WaitlistForm = () => {
       }, 3000);
       
     } catch (error) {
-      const errorMessage = error.response?.data?.detail || error.message || 'Failed to join waitlist. Please try again.';
+      // Simplify error messages for users
+      let errorMessage = 'Failed to join waitlist. Please try again.';
+      
+      if (error.response?.status === 409) {
+        errorMessage = 'This email is already on the waitlist';
+      } else if (error.response?.status === 422) {
+        errorMessage = 'Invalid email';
+      }
+      
       toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
